@@ -7,9 +7,9 @@
   <div class="form-body p-4">
 <%= form_with model: @history, local: true do |f| %>
   <h4>接触方法</h4>
-  <%= f.select :action, [["電話", "電話"], ["商談", "商談"]], include_blank: "選択して下さい" %>
+  <%= f.select :action, [["電話", "電話"], ["訪問", "訪問"], ["メール", "メール"], ["飛び込み", "飛び込み"]], include_blank: "選択して下さい" %>
   <h4>結果</h4>
-  <%= f.select :result, [["話できなかった", "話できなかった"], ["話できた", "話できた"], ["アポ取得", "アポ取得"], ["取引あり", "取引あり"]], include_blank: "選択して下さい" %>
+  <%= f.select :result,[["受付拒否", "受付拒否"], ["担当者拒否", "担当者拒否"], ["不在", "不在"], ["アポ取得", "アポ取得"], ["アドレス取得", "アドレス取得"], ["クレーム", "クレーム"], ["取引済み", "取引済み"]], include_blank: "選択して下さい" %>
   <h4>次の行動・メモ</h4>
   <%= f.text_area :caption %>
   <%= f.hidden_field :customer_id, :value => @customer %>

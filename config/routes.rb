@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   #user側
   root to:'user/homes#top'
+  get 'user/companies' , to:'user/companies#top'
   resources :customers, only: [:new, :create, :index, :show, :destroy, :edit , :update], to: 'user/customers#'
   resources :histories, only: [:new, :create, :edit, :update, :destroy], to: 'user/histories#'
 
@@ -19,8 +20,6 @@ Rails.application.routes.draw do
 
   #検索
   get 'search' => 'user/customers#search'
-
-
 
 
 
